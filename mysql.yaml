@@ -2,6 +2,11 @@
   hosts: mysql
   become: yes
   tasks:
+  - name: install mysql libraries
+    ansible.builtin.pip:
+      name: PyMySQL
+      executable: pip3.9
+    
   - name: installatioiin for
     ansible.builtin.package:
       name: mysql-server
@@ -19,6 +24,7 @@
       login_password: ExpenseApp@1
       login_host: mysql.gonew.io
     register: mysql_info
+    ignore_errors: ture
 
   - name: print the output
     ansible.builtin.debug:
