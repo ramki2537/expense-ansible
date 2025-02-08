@@ -15,12 +15,6 @@
     loop:
     - nodejs
     - mysql
-  
-  - name: enable nodejs
-    ansible.builtin.service:
-      name: nodejs
-      state: started
-      enabled: yes
 
   - name: useradd
     ansible.builtin.user:
