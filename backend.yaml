@@ -45,12 +45,12 @@
       src: backend.service
       dest: /etc/systemd/system/backend.service
 
-  - name: install python libs
+  - name: install mysql libraries
     ansible.builtin.pip:
       name: "{{ item }}"
-      executue: pip3.9
+      executable: pip3.9
     loop:
-    - cryptography 
+    - cryptography
     - PyMySQL
 
   - name: import mysql data
