@@ -17,7 +17,7 @@
     - mysql
   
   - name: enable nodejs
-    ansible.builtin.package:
+    ansible.builtin.service:
       name: nodejs
       state: started
       enabled: yes
